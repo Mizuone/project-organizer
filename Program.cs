@@ -1,10 +1,21 @@
-var builder = WebApplication.CreateBuilder(args);
+using ReactProjectCRUD.Data;
+using ReactProjectCRUD.Services.Projects;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+// Add swagger here
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,0 +1,1 @@
+export const MockEndpoint = '/api/mock/projects';
