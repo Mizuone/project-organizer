@@ -13,7 +13,7 @@ const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href') ??
 const rootElement = document.getElementById('root')!;
 const root = createRoot(rootElement);
 
-/* To locally with the external API: 
+/* To locally run with the Mock API: 
   - Set REACT_APP_USEMOCKAPI to true
   - npm start in ClientApp
 */
