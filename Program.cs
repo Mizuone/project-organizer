@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddMemoryCache();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
 
